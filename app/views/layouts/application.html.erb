@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %></title>
+    <%= render "layouts/rails_link" %>
+    <meta name="turbolinks-cache-control" content="no-preview">
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <main class="bg-container" >
+      <%= yield %>
+    </main>
+  </body>
+</html>

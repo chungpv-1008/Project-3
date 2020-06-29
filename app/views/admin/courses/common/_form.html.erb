@@ -1,0 +1,31 @@
+<%= form_for course do |f| %>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label t(".name"), for: "name"%>
+    <%= f.text_field :name, class: "form-control", id: "name", placeholder: t(".placeholder_name") %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".description"), for: "description" %>
+    <%= f.text_area :description, class: "form-control", id: "description", placeholder: t(".placeholder_description"), rows: 6 %>
+  </div>
+  <div class="form-group w-100">
+    <%= f.label t(".category"), for: "category_id" %>
+    <div class="col-sm-6">
+      <%= f.select :category_id, options_for_select(arr_categories, course.category_id),
+        {prompt: t(".placeholder_category")}, class: "custom-select my-1 mr-sm-2", id: "category_id"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".cost"), for: "cost" %>
+    <%= f.number_field :cost, step: :any, class: "form-control", id: "cost", placeholder: t(".placeholder_cost") %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".image"), for: "image" %>
+    <%= f.file_field :image, class: "form-control-file", id: "image" %>
+  </div>
+  <%= f.submit yield(:submit), class: "btn btn-primary" %>
+<% end %>

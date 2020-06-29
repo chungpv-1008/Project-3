@@ -1,0 +1,3 @@
+<%= provide :title, "#{@video.title} | #{@video.course.name}" %>
+<%= render partial: "courses/common/site_hero", locals: {course: @course} %>
+<%= render partial: "videos/common/video_content", locals: {video: @video} %>

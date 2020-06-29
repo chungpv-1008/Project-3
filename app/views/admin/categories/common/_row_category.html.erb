@@ -1,0 +1,13 @@
+<tr>
+  <th scope="row"><%= category_counter + 1 %></th>
+  <td><%= category.name %></td>
+  <td><%= time_ago_in_words category.created_at %></td>
+  <td>
+    <%= link_to "Create course", new_course_path, class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_category_path(category), class: "btn btn-primary" %>
+    <%= link_to "Delete", edit_category_path(category), class: "btn btn-danger" %>
+  </td>
+  <td>
+    <%= category.courses.size %>
+  </td>
+</tr>

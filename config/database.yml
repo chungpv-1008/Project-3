@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  pool: 5
+  timeout: 5000
+  host: "localhost"
+  database: "project_3"
+  username: "root"
+  password: "11111999"
+  port: 3306
+
+development:
+  <<: *default
+  database: project_3
+
+test:
+  <<: *default
+  database: project_3_test
+
+production:
+  <<: *default
+  database: db/production.sqlite3

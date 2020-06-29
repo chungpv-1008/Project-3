@@ -1,0 +1,49 @@
+<div class="site-section bg-light element-animate">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 order-md-2 mb-5">
+        <div class="row">
+          <div class="col-md-12">
+            <%= image_tag display_course_image(course), class: "img-fluid" %>
+          </div>
+        </div>
+        <section class="episodes">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-12 pt-5">
+                <h2><%= t ".description" %></h2>
+                <p><%= course.description %></p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 mb-2">
+                <h2><%= t ".lesson" %></h2>
+              </div>
+              <div class="col-md-4 mb-2" id="button-active">
+                <% if correct_user? course %>
+                  <%= link_to t(".new_video"), new_course_video_path(course), class: "btn btn-primary" %>
+                <% end %>
+                <%= render partial: "courses/common/purchase_course", locals: {course: course} %>
+              </div>
+            </div>
+            <% if course.videos.present? %>
+              <%= render partial: "videos/common/next_video", collection: course.videos, as: :video if course.videos.present? %>
+            <% else %>
+              <h4><%= t ".nothing_lesson" %></h4>
+            <% end %>
+          </div>
+        </section>
+      </div>
+      <!-- END content -->
+      <div class="col-md-6 col-lg-4 order-md-1">
+        <%= render partial: "courses/common/course_detail", locals: {course: course} %>
+        <%= render partial: "courses/common/author", locals: {course: course} %>
+        <%= render "categories/common/random_courses" %>
+        <%= render "categories/common/count_courses_of_category" %>
+      </div>
+      <!-- END Sidebar -->
+    </div>
+  </div>
+</div>

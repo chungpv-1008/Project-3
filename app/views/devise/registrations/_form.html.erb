@@ -1,0 +1,57 @@
+<section class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="form-wrap">
+          <h2 class="mb-5"><%= t ".title" %></h2>
+            <%= form_for resource, as: resource_name, url: user_registration_path do |f| %>
+              <% flash.each do |message_type, message| %>
+                <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+              <% end %>
+              <%= render "shared/error_messages", object: f.object %>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= f.label t(".email"), for: "email" %>
+                  <%= f.email_field :email, class: "form-control py-2", id: "email", placeholder: t(".placeholder_email") %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= f.label t(".username"), for: "username" %>
+                  <%= f.text_field :username, class: "form-control", placeholder: t(".placeholder_username") %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= f.label t(".role"), for: "role" %>
+                  <%= f.select :role, options_for_select(arr_user_roles),
+                    {prompt: t(".placeholder_role")}, class: "custom-select my-1 mr-sm-2", id: "role" %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <%= f.label t(".password"), for: "password" %>
+                  <%= f.password_field :password, class: "form-control py-2", id: "password", placeholder: t(".placeholder_password") %>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-md-12 form-group">
+                  <%= f.label t(".password_confirmation"), for: "password_confirmation" %>
+                  <%= f.password_field :password_confirmation, class: "form-control py-2", id: "password_confirmation", placeholder: t(".placeholder_password_confirmation") %>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <%= f.submit t(".submit"), class: "btn btn-primary btn-block" do %>
+                    <%= t ".submit" %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

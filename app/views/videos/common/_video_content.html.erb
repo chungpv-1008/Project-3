@@ -1,0 +1,60 @@
+<link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<div class="site-section bg-light element-animate">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 order-md-2 mb-5">
+        <section class="episodes">
+            <div class="container">
+              <div class="row mb-5">
+                <div class="col-md-12 pt-5">
+                  <h2><%= t ".title" %></h2>
+                  <p><%= video.title %></p>
+                </div>
+              </div>
+            </div>
+        </section>
+        <div class="row">
+          <div class="col-md-12">
+            <video class="video-js" controls preload="auto" width="730" height="410" poster="<%= url_for video.thumbnail %>" data-setup="{}">
+              <source src="<%= display_video_clip video %>" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <section class="episodes">
+          <div class="container">
+            <div class="row mb-5">
+              <div class="col-md-12 pt-5">
+                <h2><%= t ".description" %></h2>
+                <p><%= video.description %></p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mb-2">
+                <h2>
+                  <%= t ".lesson" %>
+                </h2>
+              </div>
+            </div>
+            <hr>
+            <div class="row d-flex justify-content-end mb-3">
+              <%= link_to t(".back"), video.course, class: "btn btn-primary" %>
+            </div>
+            <%= render partial: "videos/common/next_video", collection: next_videos(video), as: :video %>
+          </div>
+        </section>
+      </div>
+      <!-- END content -->
+      <div class="col-md-6 col-lg-4 order-md-1">
+        <%= render partial: "courses/common/course_detail", locals: {course: video.course} %>
+        <%= render partial: "courses/common/author", locals: {course: video.course} %>
+        <%= render "categories/common/random_courses" %>
+        <%= render "categories/common/count_courses_of_category" %>
+      </div>
+      <!-- END Sidebar -->
+    </div>
+  </div>
+</div>
+<script src="https://vjs.zencdn.net/7.8.2/video.js"></script>

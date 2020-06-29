@@ -1,0 +1,46 @@
+<section class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="form-wrap">
+          <h2 class="mb-4"><%= t ".title" %></h2>
+          <%= form_for :session, url: user_session_path do |f| %>
+            <% flash.each do |message_type, message| %>
+              <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+            <% end %>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <%= f.label t(".email"), for: "email" %>
+                <%= f.email_field :email, class: "form-control py-2", id: "email", placeholder: t(".email") %>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-12 form-group">
+                <%= f.label t(".password"), for: "password" %>
+                <%= f.password_field :password, class: "form-control py-2", id: "password", placeholder: t(".password") %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <%= link_to t(".forgot_password"), forgot_password_path %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                  <%= f.check_box :remember_me, checked: "checked" %>
+                  <span><%= t ".remember_me" %></span>
+                <% end %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <%= f.submit t(".login"), class: "btn btn-primary px-5 py-2"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="col-md-12 col-lg-6 mb-5">
+  <div class="block-19">
+    <figure>
+      <%= link_to course_path(course.id) do %>
+        <%= image_tag display_course_image(course), class: "img-fluid" %>
+      <% end %>
+    </figure>
+    <div class="text">
+      <h2 class="heading">
+        <%= link_to course.name, course_path(course.id) %>
+      </h2>
+      <p class="mb-4">
+        <%= course.description %>
+      </p>
+      <div class="meta d-flex align-items-center">
+        <div class="number">
+          <span>2,219/6,000</span>
+        </div>
+        <div class="price text-right"><del class="mr-3">$5</del><span>$ <%= course.cost %></span></div>
+      </div>
+    </div>
+  </div>
+</div>

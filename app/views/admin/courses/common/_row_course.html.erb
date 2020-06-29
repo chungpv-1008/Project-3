@@ -1,0 +1,15 @@
+<tr>
+  <th scope="row"><%= course_counter + 1 %></th>
+  <td><%= course.name %></td>
+  <td><%= course.description %></td>
+  <td><%= course.category.name %></td>
+  <td>$<%= course.cost %></td>
+  <td>
+    <%= link_to "Create lesson", new_course_path, class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_course_path(course), class: "btn btn-primary" %>
+    <%= link_to "Delete", edit_course_path(course), class: "btn btn-danger" %>
+  </td>
+  <td>
+    <%= course.videos.size %>
+  </td>
+</tr>

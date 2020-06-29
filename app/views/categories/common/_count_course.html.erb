@@ -1,0 +1,5 @@
+<li>
+  <%= link_to category_path(category.id) do %>
+    <%= category.name %> <span><%= category.courses.size %></span>
+  <% end %>
+</li>

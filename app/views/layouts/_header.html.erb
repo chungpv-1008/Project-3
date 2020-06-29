@@ -1,0 +1,83 @@
+<header role="banner">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <%= link_to t(".university"), root_path, class: "navbar-brand absolute" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <%= link_to t(".home"), root_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle",
+              data: {toggle: "dropdown"}, aria: {haspopup: true, expanded: false} do %>
+              <%= t ".courses" %>
+            <% end %>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <%= render partial: "layouts/common/category", collection: all_categories, as: :category %>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle",
+              data: {toggle: "dropdown"}, aria: {haspopup: true, expanded: false} do %>
+              <%= t ".categories" %>
+            <% end %>
+            <div class="dropdown-menu" aria-labelledby="dropdown05">
+              <%= link_to t(".html"), root_path, class: "dropdown-item" %>
+              <%= link_to t(".wordpress"), root_path, class: "dropdown-item" %>
+              <%= link_to t(".laravel"), root_path, class: "dropdown-item" %>
+              <%= link_to t(".javascript"), root_path, class: "dropdown-item" %>
+              <%= link_to t(".python"), root_path, class: "dropdown-item" %>
+            </div>
+          </li>
+          <li class="nav-item">
+            <%= link_to t(".about"), about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle", id:"dropdown04",
+              data: {toggle: "dropdown"},  aria: {haspopup: true, expanded: false} do %>
+              <%= t ".language" %>
+            <% end %>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <div class="dropdown-item text-white">
+                <%= link_to t(".en"), locale: "en" %>
+              </div>
+              <div class="dropdown-item text-white">
+                <%= link_to t(".vi"), locale:"vi" %>
+              </div>
+            </div>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle",
+                data: {toggle: "dropdown"}, aria: {haspopup: true, expanded: false} do %>
+                <%= t ".users" %>
+              <% end %>
+              <div class="dropdown-menu" aria-labelledby="dropdown05">
+                <%= link_to t(".admin"), admin_path, class: "dropdown-item" %>
+                <%= link_to t(".profile"), profile_path, class: "dropdown-item" %>
+                <%= link_to t(".logout"), logout_path, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="navbar-nav absolute-right">
+          <li>
+            <% unless user_signed_in? %>
+              <%= link_to t(".login"), new_user_session_path %> / <%= link_to t(".register"), new_user_registration_path %>
+            <% end %>
+          </li>
+        </ul>
+        <%= form_for :search, url: searches_path, method: :get, html: {class: "form-inline my-2 my-lg-0"} do %>
+          <%= text_field_tag :search, @text, class: "form-control mr-sm-2", placeholder: t(".search"), type: "search" %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END header -->
+<% flash.each do |message_type, message| %>
+  <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+<% end %>

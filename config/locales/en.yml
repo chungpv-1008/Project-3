@@ -1,0 +1,294 @@
+en:
+  not_permittion: "You have not permittion"
+  not_find_user: "Not find user"
+  layouts:
+    header:
+      en: "English"
+      vi: "Vietnamese"
+      university: "University"
+      home: "Home"
+      blog: "Blog"
+      about: "About"
+      contact: "Contact"
+      language: "Language"
+      categories: "Categories"
+      courses: "Courses"
+      html: "HTML"
+      wordpress: "WordPress"
+      laravel: "Laravel"
+      javascript: "Javascript"
+      python: "Python"
+      login: "Login"
+      register: "Register"
+      logout: "Log out"
+      profile: "Profile"
+      users: "User"
+      search: "Search course"
+      admin: "Admin"
+    admin:
+      bases:
+        toogle_menu: "Toogle menu"
+      sidebar:
+        categories: "Manage categories"
+  static_pages:
+    index:
+      title: "Home"
+  devise:
+    failure:
+      already_authenticated: "You logged in!"
+    sessions:
+      user:
+        already_signed_out: "Succeed loged out!"
+        signed_out: "Succeed loged out!"
+      new:
+        title: "Login"
+      form:
+        title: "Log in with your account"
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+        submit: "Login"
+        login: "Login"
+        forgot_password: "Forgot password?"
+      create:
+        invalid_message: "Invalid email or password"
+      site_hero:
+        login: "Log in"
+        home: "Home"
+    registrations:
+      user:
+        already_signed_out: "Succeed loged out!"
+        signed_out: "Succeed loged out!"
+        signed_up: "Succeed registration!"
+      new:
+        title: "Register"
+      form:
+        title: "Register new account"
+        email: "Email"
+        username: "Username"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        submit: "Register"
+        role: "Role user"
+        placeholder_role: "----------Choose role------------"
+        placeholder_email: "examble@gmail.com"
+        placeholder_username: "Andrew"
+        placeholder_password: "******"
+        placeholder_password_confirmation: "******"
+      site_hero:
+        login: "Sign up"
+        home: "Home"
+    passwords:
+      new:
+        title: "Input email"
+        description: "Please enter your email address to receive a link to change your password"
+        submit: "Send me reset password instructions"
+        email: "Email address"
+      edit:
+        title: "Change password"
+        submit: "Update password"
+        password: "New password"
+        password_confirmation: "New password confirmation"
+      user:
+        send_instructions: "We have sent the link to your email address, please check your email."
+    mailer:
+      reset_password_instructions:
+        hello: "Hello"
+        change_password: "Change password in here"
+        request: "Someone has requested a link to change your password. You can do this through the link below."
+        ignore: "If you didn't request this, please ignore this email."
+        util: "Your password won't change until you access the link above and create a new one."
+  users:
+    sessions:
+      create:
+        invalid_message: "Invalid email or password"
+    show:
+      not_found: "Not exist"
+      not_permittion: "Not permittion"
+      title: "User profile"
+      email: "Email Address"
+      private_email: "We'll never share your email with anyone else."
+      username: "User name"
+      role: "User role"
+      edit_profile: "Edit profile"
+      change_password: "Change password"
+    edit:
+      title: "Edit profile"
+      not_found: "Not exist"
+      not_permittion: "Not permittion"
+      email: "Email Address"
+      private_email: "We'll never share your email with anyone else."
+      username: "User name" 
+      role: "User role"
+      change_password: "Change password"
+      submit: "Update"
+    update:
+      success: "Success updated"
+      failed: "Can not update profile"
+    passwords:
+      update:
+        success: "Updated password"
+        failed: "Can not update password"
+      create:
+        success: "We have sent the link to the email, please check your email."
+        failed: "We could not send the email you provided"
+      user:
+        send_instructions: "Chúng tôi đã gửi đường dẫn vào địa chỉ email, vui lòng kiểm tra email."
+  courses:
+    new:
+      title: "New Course"
+      submit: "Create"
+    common:
+      form:
+        name: "Name of couse"
+        description: "Description for course"
+        category: "Category"
+        cost: "Cost"
+        placeholder_cost: "0.00"
+        placeholder_category: "-----------Categories-----------"
+        placeholder_name: "examble..."
+        placeholder_description: "..."
+        image: "Image for course"
+        submit: "Submit"
+      site_hero:
+        courses: "Course"
+        home: "Home"
+      course_content:
+        description: "Description"
+        lesson: "Lessons"
+        nothing_lesson: "Nothing video"
+        new_video: "Add video"
+      course_detail:
+        course_detail: "Course details"
+        lectures: "Lectures"
+        duration: "Duration"
+        quizzes: "Quizzes"
+        certificate: "Course Certificate"
+        subjection: "Subject Web"
+        language: "Language"
+        price: "Price $"
+        days: "days"
+        english: "English"
+        yess: "Yes"
+    create:
+      success: "Course is created successfully"
+      failed: "Can not create course"
+    edit:
+      title: "Edit course"
+      submit: "Update"
+    update:
+      success: "Course is updated"
+      failed: "Can not update course"
+      not_found_category: "Can not find category"
+    load_course:
+      not_found: "Not exist course"
+    load_category:
+      not_found_category: "Can not find category"
+  categories:
+    new:
+      title: "New category"
+      submit: "Create"
+    common:
+      form:
+        name: "Category name"
+        placeholder_name: "example..."
+        submit: "Create"
+      site_hero:
+        course: "Course"
+        home: "Home"
+      count_courses_of_category:
+        categories: "Categories"
+      random_courses:
+        recent_courses: "Recent courses"
+    create:
+      success: "Succeed create"
+      failed: "Can not create cateogry"
+    index:
+      title: "Categories"
+    edit:
+      title: "Edit category"
+      submit: "Update"
+    update:
+      success: "Succeed update"
+      failed: "Can not update category"
+    load_category:
+      not_found: "Can not find category"
+  videos:
+    new:
+      not_found_course: "Can not find course"
+      title: "Create video for course"
+      submit: "Create"
+      back: "Back"
+    common:
+      form:
+        course_name: "Name of course"
+        title: "Name of video"
+        description: "Description"
+        thumbnail: "Thumbnail for video"
+        clip: "Choose file"
+        placeholder_title: "examble..."
+        placeholder_description: "examble..."
+      video_content:
+        title: "Title of video"
+        description: "Description"
+        lesson: "Lesson"
+        back: "Back"
+      next_video:
+        runtime: "Runtime 8m20"
+        episode: "Episode"
+    edit:
+      not_found_course: "Can not find course"
+      not_found_video: "Not exist video"
+      title: "Edit video of couse"
+      submit: "Update"
+    update:
+      not_found_course: "Can not find course"
+      success: "Success updated"
+      failed: "Can not update video"
+    create:
+      not_found_course: "Can not find course"
+      success: "Success created video"
+      failed: "Can not create video"
+    show:
+      not_found_course: "Can not find course"
+  searches:
+    index:
+      danger: "Can not empty text search"
+  admin:
+    admins:
+      index:
+        title: "Admin"
+        Title: "Admin"
+        welcome: "Welcome to the web admin page"
+    categories:
+      index:
+        title: "Categories"
+        Title: "Management categories"
+        new_categories: "New category"
+      new:
+        title: "New category"
+        submit: "Create"
+      common:
+        form:
+          name: "Category name"
+          placeholder_name: "example..."
+          submit: "Create"
+          back: "Back"
+        site_hero:
+          course: "Course"
+          home: "Home"
+        count_courses_of_category:
+          categories: "Categories"
+        random_courses:
+          recent_courses: "Recent courses"
+      create:
+        success: "Succeed create"
+        failed: "Can not create cateogry"
+      edit:
+        title: "Edit category"
+        submit: "Update"
+      update:
+        success: "Succeed update"
+        failed: "Can not update category"
+      load_category:
+        not_found: "Can not find category"

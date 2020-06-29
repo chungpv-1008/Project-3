@@ -1,0 +1,24 @@
+favicon_image: "favicon.ico"
+user:
+  max_length_email: 250
+  min_length_password: 6
+  max_length_username: 50
+  min_length_username: 4
+  email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+  username_regex: !ruby/regexp '/[A-Za-z0-9\-\_\+]+/'
+  phone_regex: !ruby/regexp '/\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/'
+  author_avatar: "person_1.jpg"
+  normal: 0
+  teacher: 1
+  admin: 2
+course:
+  max_length_name: 250
+  min_length_name: 5
+  n_element: 3
+category:
+  max_length_name: 50
+  min_length_name: 2
+video:
+  max_title_length: 250
+  min_title_length: 2
+  next_video: 3

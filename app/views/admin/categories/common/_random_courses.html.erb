@@ -1,0 +1,8 @@
+ <div class="block-25 mb-5">
+  <div class="heading">
+    <%= t ".recent_courses" %>
+  </div>
+  <ul>
+    <%= render partial: "categories/common/course_of_recent_courses", collection: recent_course(Settings.course.n_element), as: :course %>
+  </ul>
+</div>

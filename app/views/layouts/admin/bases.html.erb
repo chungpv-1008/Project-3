@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %></title>
+    <%= render "layouts/rails_link" %>
+    <meta name="turbolinks-cache-control" content="no-preview">
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <div class="d-flex" id="wrapper">
+      <%= render "layouts/admin/sidebar" %>
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="d-flex navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-primary" id="menu-toggle"><%= t ".toogle_menu" %></button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h3 class="flex-grow-1 text-center d-inline"><%= yield :Title %></h3>
+        </nav>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+      <!-- /#wrapper -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+
+  </body>
+</html>

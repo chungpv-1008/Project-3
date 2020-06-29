@@ -1,0 +1,10 @@
+<% unless current_user.has_view_course? course %>
+  <%= label_tag :"submit_transaction", "Purchase", class: "btn btn-primary" %>
+  <%= form_for current_user.transactions.build(course_id: course.id), html: {class: "d-none"}, remote: true do |f| %>
+    <%= f.text_field :user_id %>
+    <%= f.text_field :course_id %>
+    <%= f.submit "submit", id: "submit_transaction" %>
+  <% end %>
+<% else %>
+  <%= label_tag :"submit_transaction", "Purchased", class: "btn btn-warning" %>
+<% end %>

@@ -1,0 +1,6 @@
+<div class="block-24 mb-5">
+  <h3 class="heading"><%= t ".categories" %></h3>
+  <ul>
+    <%= render partial: "categories/common/count_course", collection: all_categories, as: :category %>
+  </ul>
+</div>

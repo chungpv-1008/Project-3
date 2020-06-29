@@ -1,0 +1,18 @@
+<div class="row bg-light align-items-center p-4 episode">
+  <div class="col-md-10">
+    <p class="meta"><%= t ".episode" %> <%= index_video video %> <%= link_to t(".runtime"), course_video_path(video.course, video) %></p>
+    <h2>
+      <%= link_to course_video_path(video.course, video) do %>
+        <%= video.title %>
+      <% end %>
+    </h2>
+    <p>
+      <%= video.description %>
+    </p>
+  </div>
+  <div class="col-md-2 text-center">
+    <%= link_to course_video_path(video.course, video), class: "play" do %>
+      <span class="ion-ios-play"></span>
+    <% end %>
+  </div>
+</div>

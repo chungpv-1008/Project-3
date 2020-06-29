@@ -1,0 +1,28 @@
+<%= form_for [course, video] do |f| %>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.hidden_field :course_id, value: course.id %>
+  <div class="form-group">
+    <%= f.label t(".course_name"), for: "course_name" %>
+    <%= text_field_tag :course_name, course.name, class: "form-control", readonly: :true %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".title"), for: "title"%>
+    <%= f.text_field :title, class: "form-control", id: "title", placeholder: t(".placeholder_title") %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".description"), for: "description" %>
+    <%= f.text_area :description, class: "form-control", id: "description", placeholder: t(".placeholder_description"), rows: 6 %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".thumbnail"), for: "thumbnail" %>
+    <%= f.file_field :thumbnail, class: "form-control-file", id: "thumbnail" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".clip"), for: "clip" %>
+    <%= f.file_field :clip, class: "form-control-file", id: "clip" %>
+  </div>
+  <%= f.submit yield(:submit), class: "btn btn-primary" %>
+<% end %>

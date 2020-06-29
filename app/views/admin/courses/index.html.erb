@@ -1,0 +1,19 @@
+<%= provide :title, "Manage courses" %>
+<%= provide :Title, "Managa all courses" %>
+<%= link_to "New course", new_admin_course_path, class: "btn btn-primary mt-5" %>
+<table class="table table-hover mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Category</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Action</th>
+      <th scope="col">Lesson count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "admin/courses/common/row_course", collection: @courses, as: :course %>
+  </tbody>
+</table>

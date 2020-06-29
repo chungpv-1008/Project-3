@@ -1,0 +1,13 @@
+<li>
+  <%= link_to course_path(course.id), class: "d-flex" do %>
+    <figure class="image mr-3">
+      <%= image_tag display_course_image(course) %>
+    </figure>
+    <div class="text">
+      <h3 class="heading">
+        <%= course.name %>
+      </h3>
+      <span class="meta">$<%= course.cost %></span>
+    </div>
+  <% end %>
+</li>

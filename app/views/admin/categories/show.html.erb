@@ -1,0 +1,42 @@
+<div class="site-section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 order-md-2">
+        <div class="row">
+          <%= render partial: "categories/common/course", collection: @courses %>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12 text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END content -->
+      <div class="col-md-6 col-lg-4 order-md-1">
+        <%= render "categories/common/count_courses_of_category" %>
+        <%= render "categories/common/random_courses" %>
+
+        <div class="block-26">
+          <h3 class="heading">Tags</h3>
+          <ul>
+            <li><a href="#">code</a></li>
+            <li><a href="#">design</a></li>
+            <li><a href="#">typography</a></li>
+            <li><a href="#">development</a></li>
+            <li><a href="#">creative</a></li>
+            <li><a href="#">codehack</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- END Sidebar -->
+    </div>
+  </div>
+</div>

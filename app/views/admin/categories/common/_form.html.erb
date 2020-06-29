@@ -1,0 +1,14 @@
+<%= form_for @category, url: admin_categories_path do |f| %>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label t(".name"), for: "name"%>
+    <%= f.text_field :name, class: "form-control", id: "name", placeholder: t(".placeholder_name") %>
+  </div>
+  <div class="d-flex justify-content-around">
+    <%= f.submit yield(:submit), class: "btn btn-primary" %>
+    <%= link_to t(".back"), admin_categories_path, class: "btn btn-warning" %>
+  </div>
+<% end %>

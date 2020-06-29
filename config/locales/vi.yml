@@ -1,0 +1,301 @@
+vi:
+  not_permittion: "Bạn không được phép"
+  not_find_user: "Không tồn tại người dùng"
+  layouts:
+    header:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+      university: "University"
+      home: "Trang chủ"
+      blog: "Bài viết"
+      about: "Giới thiệu"
+      contact: "Liên hệ"
+      language: "Ngôn ngữ"
+      categories: "Thể loại"
+      courses: "Khóa học"
+      html: "HTML"
+      wordpress: "WordPress"
+      laravel: "Laravel"
+      javascript: "Javascript"
+      python: "Python"
+      login: "Đăng nhập"
+      register: "Đăng ký"
+      logout: "Đăng xuất"
+      profile: "Hồ sơ"
+      users: "Người dùng"
+      search: "Tìm kiếm khóa học"
+      admin: "Quản trị viên"
+    admin:
+      bases:
+        toogle_menu: "Thu/phóng menu"
+      sidebar:
+        categories: "Quản lý thể loại khóa học"
+  static_pages:
+    index:
+      title: "Trang chủ"
+  devise:
+    failure:
+      already_authenticated: "Bạn đã đăng nhập!"
+    sessions:
+      user:
+        already_signed_out: "Đăng xuất thành công!"
+        signed_out: "Đăng xuất thành công!"
+      new:
+        title: "Đăng nhập"
+      form:
+        title: "Đăng nhập với tài khoản của bạn"
+        email: "Email đăng nhập"
+        password: "Mật khẩu"
+        submit: "Đăng nhập"
+        remember_me: "Remember me"
+        login: "Đăng nhập"
+        forgot_password: "Quên mật khẩu?"
+      create:
+        invalid_message: "Sai email hoặc mật khẩu"
+      site_hero:
+        login: "Đăng nhập"
+        home: "Trang chủ"
+    registrations:
+      user:
+        already_signed_out: "Đăng xuất thành công!"
+        signed_out: "Đăng xuất thành công!"
+        signed_up: "Đăng ký thành công!"
+      new:
+        title: "Đăng ký"
+      form:
+        title: "Tạo tài khoản mới"
+        email: "Email đăng ký"
+        username: "Tên người dùng"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        role: "Đăng ký tác vụ"
+        placeholder_role: "----------Chọn tác vụ------------"
+        submit: "Đăng ký"
+        placeholder_email: "vidu@gmail.com"
+        placeholder_username: "Nguyen Van A"
+        placeholder_password: "******"
+        placeholder_password_confirmation: "******"
+      site_hero:
+        login: "Đăng ký"
+        home: "Trang chủ"
+    passwords:
+      new:
+        title: "Nhập email"
+        description: "Vui lòng nhập địa chỉ email để nhận được đường dẫn đổi mật khẩu"
+        submit: "Gửi đến email này"
+        email: "Địa chỉ email"
+      edit:
+        title: "Thay đổi mật khẩu"
+        submit: "Cập nhật mật khẩu"
+        password: "Mật khẩu mới"
+        password_confirmation: "Xác nhận mật khẩu mới"
+      user:
+        send_instructions: "Chúng tôi đã gửi đường dẫn vào địa chỉ email, vui lòng kiểm tra email."
+    mailer:
+      reset_password_instructions:
+        hello: "Xin chào"
+        change_password: "Thay đổi mật khẩu tại đây"
+        request: "Một ứng dụng đã gửi thư này cho bạn để xác nhận đổi mật khẩu, hãy click vào đường dẫn phía dưới."
+        ignore: "Nếu bạn không yêu cầu thêm, vui lòng không trả lời email này."
+        util: "Mật khẩu của bạn không thể đổi cho đến khi bạn truy cập đường dẫn bên trên, và làm theo đúng chỉ dẫn."
+  users:
+    sessions:
+      create:
+        invalid_message: "Sai email hoặc mật khẩu"
+    passwords:
+      create:
+        success: "Chúng tôi đã gửi đường dẫn vào địa chỉ email, vui lòng kiểm tra email."
+        failed: "Chúng tôi không thể gửi thư vào địa chỉ email bạn cung cấp."
+    show:
+      not_found: "Không tồn tại"
+      not_permittion: "Không được phép"
+      title: "Hồ sơ người dùng"
+      email: "Địa chỉ email"
+      private_email: "Chúng tôi không bao giờ chia sẻ địa chỉ email này cho người khác."
+      username: "Tên tài khoản"
+      role: "Tác vụ"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      change_password: "Đổi mật khẩu"
+    edit:
+      not_found: "Không tồn tai"
+      not_permittion: "Không được phép"
+      title: "Chỉnh sửa hồ sơ"
+      email: "Địa chỉ email"
+      private_email: "Chúng tôi không bao giờ chia sẻ địa chỉ email này cho người khác."
+      username: "Tên tài khoản"
+      role: "Tác vụ"
+      change_password: "Đổi mật khẩu"
+      submit: "Cập nhật"
+    update:
+      success: "Cập nhật thành công"
+      failed: "Không thể cập nhật"
+    passwords:
+      update:
+        success: "Mật khẩu cập nhật thành công"
+        failed: "Không thể cập nhật mật khẩu"
+      create:
+        danger: "Chúng tôi không thể gửi thư vào địa chỉ email bạn cung cấp."
+        success: "Chúng tôi đã gửi đường dẫn vào địa chỉ email, vui lòng kiểm tra email."
+        failed: "Chúng tôi không thể gửi thư vào địa chỉ email bạn cung cấp."
+        password_confirmation: "Xác nhận mật khẩu mới"
+      user:
+        send_instructions: "Chúng tôi đã gửi đường dẫn vào địa chỉ email, vui lòng kiểm tra email."
+  courses:
+    new:
+      title: "Tạo khóa học mới"
+      submit: "Tạo mới"
+    common:
+      form:
+        name: "Tên của khóa học"
+        description: "Mô tả cho khóa học"
+        category: "Thể loại"
+        cost: "Giá cả"
+        placeholder_cost: "0.00"
+        placeholder_category: "-----------Thể loại-----------"
+        placeholder_name: "ví dụ..."
+        placeholder_description: "..."
+        image: "Ảnh nền cho khóa học"
+        submit: "Gửi"
+      site_hero:
+        courses: "Khóa học"
+        home: "Trang chủ"
+      course_content:
+        description: "Mô tả"
+        lesson: "Bài học"
+        nothing_lesson: "Chưa có video nào"
+        new_video: "Thêm video"
+      course_detail:
+        course_detail: "Chi tiết khóa học"
+        lectures: "Bài học"
+        duration: "Thời gian"
+        quizzes: "Câu đố"
+        certificate: "Chứng chỉ khóa học"
+        subjection: "Chủ đề khóa học"
+        language: "Ngôn ngữ"
+        price: "Giá $"
+        days: "ngày"
+        english: "Tiếng Anh"
+        yess: "Có"
+    create:
+      success: "Khóa học đã được tạo"
+      failed: "Không thể tạo khóa học"
+    edit:
+      title: "Chỉnh sửa khóa học"
+      submit: "Cập nhật"
+    update:
+      success: "Đã cập nhật khóa học"
+      failed: "Không thể chỉnh sửa khóa học"
+      not_found_category: "Không tìm thấy thể loại nào"
+    load_course:
+      not_found: "Không tồn tại khóa học"
+    load_category:
+      not_found_category: "Không tìm thấy thể loại nào"
+  categories:
+    new:
+      title: "Tạo mới thể loại"
+      submit: "Tạo mới"
+    common:
+      form:
+        name: "Tên thể loại"
+        placeholder_name: "vi du..."
+        submit: "Tạo mới"
+        success: "Tạo mới thành công"
+        failed: "Không thể tạo thể loại mới"
+      site_hero:
+        course: "Khóa học"
+        home: "Trang chủ"
+      count_courses_of_category:
+        categories: "Các thể loại"
+      random_courses:
+        recent_courses: "Các khóa học gần đây"
+    index:
+      title: "Thể loại"
+    edit:
+      title: "Chỉnh sửa thể loại"
+      submit: "Cập nhật"
+    update:
+      success: "Cập nhật thành công"
+      failed: "Không thể sửa thể loại này"
+    load_category:
+      not_found: "Không tìm thấy thể loại nào"
+  videos:
+    new:
+      not_found_course: "Không tìm thấy khóa học"
+      title: "Tạo mới video cho khóa học"
+      submit: "Tạo mới"
+      back: "Quay lại"
+    common:
+      form:
+        course_name: "Tên khóa học"
+        title: "Tên video"
+        description: "Mô tả"
+        thumbnail: "Ảnh minh họa"
+        clip: "Tải file"
+        placeholder_title: "vi du..."
+        placeholder_description: "vi du..."
+      video_content:
+        title: "Tiêu đề bài học"
+        description: "Mô tả"
+        lesson: "Bài học"
+        back: "Quay lại"
+      next_video:
+        runtime: "Thời gian 8p20"
+        episode: "Phần"
+    edit:
+      not_found_course: "Không tìm thấy khóa học"
+      not_found_video: "Không tồn tại video"
+      title: "Chỉnh sửa video của khóa học"
+      submit: "Cập nhật"
+    update:
+      not_found_course: "Không tìm thấy khóa học"
+      success: "Cập nhật video thành công"
+      failed: "Không thể cập nhật"
+    create:
+      not_found_course: "Không tìm thấy khóa học"
+      success: "Tạo video thành công"
+      failed: "Không thể tạo video"
+    show:
+      not_found_course: "Không tìm thấy khóa học"
+  searches:
+    index:
+      danger: "Không được để trống ô tìm kiếm"
+  admin:
+    admins:
+      index:
+        title: "Quản trị"
+        Title: "Quản trị"
+        welcome: "Chào mừng bạn đến với trang quản trị của web"
+    categories:
+      index:
+        title: "Thể loại khóa học"
+        Title: "Quản lý các thể loại các khóa học"
+        new_category: "Tạo thể loại mới"
+      new:
+        title: "Tạo mới thể loại"
+        submit: "Tạo mới"
+      common:
+        form:
+          name: "Tên thể loại"
+          placeholder_name: "vi du..."
+          submit: "Tạo mới"
+          success: "Tạo mới thành công"
+          failed: "Không thể tạo thể loại mới"
+          back: "Quay lại"
+        site_hero:
+          course: "Khóa học"
+          home: "Trang chủ"
+        count_courses_of_category:
+          categories: "Các thể loại"
+        random_courses:
+          recent_courses: "Các khóa học gần đây"
+      create:
+        success: "Succeed create"
+        failed: "Can not create cateogry"
+      edit:
+        title: "Chỉnh sửa thể loại"
+        submit: "Cập nhật"
+      update:
+        success: "Cập nhật thành công"
+        failed: "Không thể sửa thể loại này"
+      load_category:
+        not_found: "Không tìm thấy thể loại nào"

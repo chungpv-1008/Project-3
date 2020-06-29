@@ -1,0 +1,33 @@
+<%= provide :title, t(".title") %>
+<div class="row w-100 mt-5">
+  <h2 class="w-100 text-center"><%= t ".title" %>
+</div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="row w-100">
+      <%= form_for @user, html: {class: "w-100"} do |f| %>
+        <div class="form-group">
+          <%= f.label t(".email"), for: :email %>
+          <%= f.email_field :email, class: "form-control", autofocus: true, id: :email %>
+          <small id="emailHelp" class="form-text text-muted"><%= t ".private_email" %></small>
+        </div>
+        <div class="form-group">
+          <%= f.label t(".username"), for: :username %>
+          <%= f.text_field :username, class: "form-control", id: :username %>
+        </div>
+        <div class="form-group">
+          <%= f.label t(".role"), for: "role" %>
+          <%= f.select :role, options_for_select(arr_user_roles, role_user(@user)),
+            {}, class: "custom-select my-1 mr-sm-2", id: "role", disabled: :true %>
+        </div>
+        <%= f.submit t(".submit"), class:"btn btn-primary" %>
+      <% end %>
+    </div>
+    <hr>
+    <div class="row">
+      <%= link_to t(".change_password"), new_user_password_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
