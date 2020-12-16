@@ -37,6 +37,16 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories
       resources :courses
+      resources :projects do
+        member do
+          get :members, to: "projects#members"
+          get :images, to: "projects#images"
+        end
+      end
+      resources :users
+      resources :images
+      resources :user_projects
+      resources :locations
     end
     get "/admin", to: "admin/admins#index"
   end

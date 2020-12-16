@@ -1,0 +1,19 @@
+<%= render "admin/projects/show_base", project: @project %>
+<h2 class="text-center mt-5">
+  Members of project
+</h2>
+<table class="table table-hover mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "admin/projects/member", collection: @members, as: :member %>
+  </tbody>
+</table>
+<%# <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true"></div> %>

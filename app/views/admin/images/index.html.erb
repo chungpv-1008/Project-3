@@ -1,0 +1,10 @@
+<%= provide :title, "Manage images" %>
+<%= provide :Title, "Managa all images" %>
+<div>
+  <%= link_to "New images", new_admin_image_path(new_type: :multiple), remote: :true, class: "btn btn-primary mt-5" %>
+</div>
+<div class="list-image w-100 mt-6" style="margin-top: 50px;">
+  <%= render @images %>
+  <div class="clearfix"></div>
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true"></div>

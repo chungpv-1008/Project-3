@@ -22,3 +22,5 @@ video:
   max_title_length: 250
   min_title_length: 2
   next_video: 3
+role:
+  project_manager: 1

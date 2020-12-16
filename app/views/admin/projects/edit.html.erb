@@ -1,0 +1,16 @@
+<%= provide :title, "Edit project" %>
+<%= provide :submit, "Update" %>
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="w-100 text-center">Edit Project</h2>
+  </div>
+  <div class="row mb-5">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+      <%= render partial: "admin/projects/form", locals: {project: @project} %>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<%= form_tag admin_images_path, multipart: true, remote: true, method: :post do %>
+  <% if @project %>
+    <div class="form-group">
+      <%= label_tag :project_id, "Project" %>
+      <%= hidden_field_tag :project_id, @project.id, class: "form-control select2-field" %>
+      <%= text_field_tag :project_name, @project.name, class: "form-control select2-field users-projects-select", disabled: true %>
+    </div>
+  <% else %>
+    <div class="form-group">
+      <%= label_tag :project_id, "Project" %>
+      <%= select_tag :project_id, options_for_select(Project.all.pluck(:name, :id)), class: "form-control select2-field users-projects-select" %>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= label_tag :backgrounds, "Import images" %>
+    <%= file_field_tag "backgrounds[]", multiple: true, class: "form-control", id: "backgrounds" %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+<% end %>
