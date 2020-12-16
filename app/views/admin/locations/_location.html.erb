@@ -1,7 +1,10 @@
-<ul class="d-none location">
-  <li class="coordinate"><%= location.coordinate %></li>
-  <li class="content"><%= location.content %></li>
-</ul>
-<%= link_to edit_admin_location_path(location), class: "button-edit-location btn btn-sm btn-primary", remote: true do %>
-  <i class="mdi mdi-brush mdi-9px"></i>
-<% end %>
+<div class="location">
+  <ul class="d-none" id="location-th-<%= location_counter + 1 %>">
+    <li class="coordinate"><%= location.coordinate %></li>
+    <li class="content"><%= location.content %></li>
+  </ul>
+  <%= link_to edit_admin_location_path(location), class: "button-edit-location btn btn-sm btn-primary",
+    id: "button-edit-#{location_counter + 1}", remote: true do %>
+    <i class="mdi mdi-brush mdi-9px"></i>
+  <% end %>
+</div>

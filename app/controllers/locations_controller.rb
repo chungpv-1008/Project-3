@@ -1,4 +1,4 @@
-class Admin::LocationsController < Admin::BasesController
+class LocationsController < ApplicationController
   before_action :load_location
 
   def index
@@ -7,15 +7,13 @@ class Admin::LocationsController < Admin::BasesController
       image = Image.find_by id: params[:image_id]
       @locations = image.locations
       locations_info = locations_info @locations
-      json_data = {"form": locations_info}
-      @file_name = image.name
+      json_data = {"form": [locations_info]}
     when params[:project_id].present?
       @locations = Location.filter_by_project params[:project_id]
       json_data = {"project" => Array.new}
       Project.find_by(id: params[:project_id]).images.each do |image|
         json_data["project"] << {"form": locations_info(image.locations)}
       end
-      @file_name = Project.find_by(id: params[:project_id]).name
     else
       @locations = Location.all
       json_data = {"system" => Array.new}
@@ -26,16 +24,15 @@ class Admin::LocationsController < Admin::BasesController
         end
         json_data["system"] << hash
       end
-      @file_name = "System"
     end
-    
+
     respond_to do |format|
       format.html
       format.json do
-        send_data JSON.pretty_generate(json_data), filename: @file_name
+        send_data JSON.pretty_generate(json_data), filename: "locations-data-#{Time.new.usec}.json"
       end
       format.csv do
-        send_data @locations.to_csv, filename: @file_name
+        send_data @locations.to_csv, filename: "locations-data-#{Time.new.usec}.csv"
       end
     end
   end

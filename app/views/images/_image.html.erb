@@ -5,11 +5,5 @@
     <%= link_to "Preview", rails_blob_path(image.background, disposition: 'preview'), target: :blank %>
     |
     <%= link_to "Download", rails_blob_path(image.background, disposition: 'attachment'), target: :blank %>
-    |
-    <%= link_to "Detail", admin_image_path(image), target: :blank %>
-    |
-    <div class="d-inline btn-group-sm" id="image-download-<%= image.id %>">
-      <%= render partial: "admin/images/download", locals: {image: image} %>
-    </div>
   </div>
 </div>

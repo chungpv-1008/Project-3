@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 
+gem "active_storage_base64"
+gem "httparty"
 gem "active_storage_validations", "~> 0.8.7"
 gem "material_design_icons"
 gem "google-cloud-storage"

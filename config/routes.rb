@@ -47,7 +47,15 @@ Rails.application.routes.draw do
       resources :images
       resources :user_projects
       resources :locations
+      resources :status_projects
     end
     get "/admin", to: "admin/admins#index"
+    resources :images
+    resources :locations
+    resources :projects do
+      member do
+        get :images, to: "projects#images"
+      end
+    end
   end
 end

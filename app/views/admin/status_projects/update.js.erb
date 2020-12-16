@@ -1,0 +1,11 @@
+$("#project-status-<%= @project.id %>").html(`
+  <%= j render partial: "admin/projects/status", locals:{project: @project} %>
+`)
+$("#project-download-<%= @project.id %>").html(`
+  <%= j render partial: "admin/projects/download", locals:{project: @project} %>
+`)
+<% @project.images.each do |image| %>
+  $("#image-download-<%= image.id %>").html(`
+    <%= j render partial: "admin/images/download", locals: {image: image} %>
+  `)
+<% end %>

@@ -257,9 +257,22 @@ i {
   display: none;
 }
 
-#container:hover {
+// #container:hover {
+//   .button-edit-location {
+//     display: inline-block;
+//     opacity: .6;
+//   }
+// }
+
+.box {
+  position: absolute;
+  background: none;
+  border: 1px solid red;
+  z-index: 100;
+}
+
+.location:hover {
   .button-edit-location {
-    display: inline-block;
-    opacity: .6;
+    display: inline;
   }
 }
