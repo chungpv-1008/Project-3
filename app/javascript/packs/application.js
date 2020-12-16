@@ -5,11 +5,6 @@ require("channels");
 require("jquery");
 global.$ = jQuery;
 require("turbolinks");
-require("popper.js");
 require("bootstrap");
-require("video.js");
-require("magnific-popup");
-require("owl.carousel");
-require("packs/custom");
-require("packs/users");
-require("packs/courses");
+require("select2");
+require("./projects.js")

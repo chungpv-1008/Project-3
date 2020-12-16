@@ -1,0 +1,31 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="newModalLabel">Users in this project</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <%= form_with url: admin_user_projects_path, remote: true do |f| %>
+        <%= f.hidden_field :object_id, value: object.id %>
+        <%= f.hidden_field :type, value: object_type %>
+        <% if object_type == "project" %>
+          <%= f.select "users_projects_#{object.id}",
+            options_for_select(User.except_project_managers.pluck(:name, :id), selected: object.users.pluck(:id)),
+            {}, multiple: true, class: "form-control select2-field users-projects-select"
+          %>
+        <% else %>
+          <%= f.select "users_projects_#{object.id}",
+            options_for_select(Project.pluck(:name, :id), selected: object.projects.pluck(:id)),
+            {}, multiple: true, class: "form-control select2-field users-projects-select"
+          %>
+        <% end %>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

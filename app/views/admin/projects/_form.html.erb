@@ -1,0 +1,12 @@
+<%= form_for [:admin, project] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label "Avatar", for: "avatar" %>
+    <%= f.file_field :avatar, class: "form-control", id: "avatar" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Name", for: "name"%>
+    <%= f.text_field :name, class: "form-control", id: "name", placeholder: "Enter project name" %>
+  </div>
+  <%= f.submit yield(:submit), class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="responsive">
+  <div class="gallery">
+    <%= image_tag image.background, class: "myImg background-image", alt: image.name %>
+    <div class="desc"><%= image.name %></div>
+    <%= link_to "Preview", rails_blob_path(image.background, disposition: 'preview'), target: :blank %>
+    |
+    <%= link_to "Download", rails_blob_path(image.background, disposition: 'attachment'), target: :blank %>
+    |
+    <%= link_to "Detail", admin_image_path(image), target: :blank %>
+  </div>
+</div>

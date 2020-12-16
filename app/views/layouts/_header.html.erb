@@ -10,28 +10,6 @@
           <li class="nav-item">
             <%= link_to t(".home"), root_path, class: "nav-link active" %>
           </li>
-          <li class="nav-item dropdown">
-            <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle",
-              data: {toggle: "dropdown"}, aria: {haspopup: true, expanded: false} do %>
-              <%= t ".courses" %>
-            <% end %>
-            <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <%= render partial: "layouts/common/category", collection: all_categories, as: :category %>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <%= link_to "javascript:void(0)", class: "nav-link dropdown-toggle",
-              data: {toggle: "dropdown"}, aria: {haspopup: true, expanded: false} do %>
-              <%= t ".categories" %>
-            <% end %>
-            <div class="dropdown-menu" aria-labelledby="dropdown05">
-              <%= link_to t(".html"), root_path, class: "dropdown-item" %>
-              <%= link_to t(".wordpress"), root_path, class: "dropdown-item" %>
-              <%= link_to t(".laravel"), root_path, class: "dropdown-item" %>
-              <%= link_to t(".javascript"), root_path, class: "dropdown-item" %>
-              <%= link_to t(".python"), root_path, class: "dropdown-item" %>
-            </div>
-          </li>
           <li class="nav-item">
             <%= link_to t(".about"), about_path, class: "nav-link" %>
           </li>

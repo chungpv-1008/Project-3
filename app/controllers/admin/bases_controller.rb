@@ -1,5 +1,5 @@
 class Admin::BasesController < ApplicationController
-  before_action :authenticate_user!, :is_admin?
+  before_action :authenticate_user!, :is_project_manager?
 
   private
 
@@ -11,8 +11,8 @@ class Admin::BasesController < ApplicationController
     redirect_to root_path
   end
 
-  def is_admin?
-    return if current_user.admin?
+  def is_project_manager?
+    return if current_user.project_manager?
 
     flash[:danger] = t "not_permittion"
     redirect_to root_path

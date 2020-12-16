@@ -1,0 +1,9 @@
+<tr>
+  <th scope="row"><%= user_counter + 1 %></th>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.role %></td>
+  <td>
+    <%= link_to "Edit projects", new_admin_user_project_path(object_id: user.id, type: :user), class: "btn btn-outline-success", remote: true %>
+  </td>
+</tr>

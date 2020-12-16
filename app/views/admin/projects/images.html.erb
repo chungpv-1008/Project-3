@@ -1,0 +1,9 @@
+<%= render "admin/projects/show_base", project: @project %>
+<div>
+  <%= link_to "New images for project", new_admin_image_path(new_type: :multiple, project_id: @project.id), remote: :true, class: "btn btn-primary mt-5" %>
+</div>
+<div class="list-image w-100 mt-6" style="margin-top: 50px;">
+  <%= render partial: "admin/projects/image", collection: @images, as: :image %>
+  <div class="clearfix"></div>
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true"></div>

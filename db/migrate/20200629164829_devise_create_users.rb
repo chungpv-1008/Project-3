@@ -12,8 +12,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_column :users, :username, :string
+    add_column :users, :name, :string
     add_column :users, :remember_digest, :string
+    add_column :users, :role, :integer, default: 0
     add_index :users, :email, unique: true
     add_index :users, :reset_password_token, unique: true
   end

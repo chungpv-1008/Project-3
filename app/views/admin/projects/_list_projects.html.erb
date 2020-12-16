@@ -1,0 +1,20 @@
+<tr class="row">
+  <th scope="row" class="col-md-1 table-project"><%= project_counter + 1 %></th>
+  <td class="col-md-3 table-project"><%= image_tag project.avatar, class: "avatar-project-row" if project.avatar.attached? %></td>
+  <td class="col-md-3 table-project"><%= project.name %></td>
+  <td class="col-md-5 table-project">
+    <%= link_to edit_admin_project_path(project), class: "btn btn-primary" do %>
+      <i class="mdi mdi-brush mdi-9px"></i>
+      Edit
+    <% end %>
+    <%= link_to admin_project_path(project), class: "btn btn-danger", method: :delete, data: {toggle: "tooltip", placement: :top, confirm: "Are you sure you?"} do %>
+      <i class="mdi mdi-delete mdi-9px"></i>
+      Delete
+    <% end %>
+    <%= link_to "Edit members", new_admin_user_project_path(object_id: project.id, type: :project), class: "btn btn-outline-success", remote: true %>
+    <%= link_to admin_project_path(project), class: "btn btn-success" do %>
+      Detail
+      <i class="mdi mdi-forward mdi-9px"></i>
+    <% end %>
+  </td>
+</tr>

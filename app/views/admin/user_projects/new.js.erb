@@ -1,0 +1,4 @@
+$("#newModal").html(`
+  <%= j render "admin/user_projects/new_modal", object: @object, object_type: @object_type %>
+`).modal("show");
+$(".users-projects-select").select2({width: '100%'});
