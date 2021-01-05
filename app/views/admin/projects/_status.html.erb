@@ -1,0 +1,7 @@
+<% if project.status == "unlock_" %>
+  <%= link_to "Lock", admin_status_project_path(project, status: :lock_),
+    method: :put, remote: true, class: "btn btn-danger" %>
+<% else %>
+  <%= link_to "Unlock", admin_status_project_path(project, status: :unlock_),
+    method: :put, remote: true, class: "btn btn-warning" %>
+<% end %>

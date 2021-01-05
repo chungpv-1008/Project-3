@@ -13,16 +13,27 @@ class Admin::ImagesController < Admin::BasesController
   end
 
   def show
+    if @image.not_predict?
+      image_base64 = Base64.encode64 File.open(ActiveStorage::Blob.service.send(:path_for, @image.background.key)).read
+      response = HTTParty.post('http://localhost:5000/api/model', body: {image_base64: image_base64})
+      response["data"].each do |location|
+        content = location["text"]
+        coordinate = location["box"]
+        Location.create image_id: @image.id, coordinate: coordinate, content: content
+      end
+      @image.predicted!
+    end
     @locations = @image.locations
   end
 
-  def edit; end
+  def edit; end 
 
   def create
     params[:backgrounds].each do |background|
       name = background.original_filename
+      base_64 = "data:image/jpeg;base64,#{Base64.encode64(File.open(background, "rb") {|io| io.read})}"
       image = current_user.images.build name: name, project_id: params[:project_id]
-      image.background.attach background
+      image.background.attach(data: base_64)
       image.save
     end
     redirect_back fallback_location: root_path

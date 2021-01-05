@@ -1,0 +1,6 @@
+<%= render "projects/show_base", project: @project %>
+<div class="list-image w-100 mt-6" style="margin-top: 50px;">
+  <%= render partial: "projects/image", collection: @images, as: :image %>
+  <div class="clearfix"></div>
+</div>
+<div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true"></div>

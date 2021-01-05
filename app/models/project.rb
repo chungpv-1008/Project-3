@@ -6,6 +6,8 @@ class Project < ApplicationRecord
   has_many :images, dependent: :destroy
   has_one_attached :avatar
 
+  enum status: {unlock_: 0, lock_: 1}
+
   validates :name, presence: true, length: {
       maximum: Settings.course.max_length_name,
       minimum: Settings.course.min_length_name

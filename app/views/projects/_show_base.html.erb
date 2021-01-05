@@ -1,0 +1,22 @@
+<div class="w-100">
+  <div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="col-2">
+      <%= image_tag project.avatar, class: "myImg avatar-project-row", id: "myImg" if project.avatar.attached? %>
+    </div>
+    <div class="col-4 detail-project-name">
+      <%= link_to project.name, project_path(project) %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="col-2">
+      <%= link_to images_project_path(project) do %>
+        <%= project.images.size %> images
+      <% end %>
+    </div>
+    <div class="col-2 btn-group">
+      <%= render partial: "projects/download", locals:{project: project} %>
+    </div>
+  </div>
+</div>

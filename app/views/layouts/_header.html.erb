@@ -34,8 +34,11 @@
                 <%= t ".users" %>
               <% end %>
               <div class="dropdown-menu" aria-labelledby="dropdown05">
-                <%= link_to t(".admin"), admin_path, class: "dropdown-item" %>
-                <%= link_to t(".profile"), profile_path, class: "dropdown-item" %>
+                <% if current_user.project_manager? %>
+                  <%= link_to t(".admin"), admin_path, class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to "Manager Projects", projects_path, class: "dropdown-item" %>
+                <% end %>
                 <%= link_to t(".logout"), logout_path, class: "dropdown-item" %>
               </div>
             </li>

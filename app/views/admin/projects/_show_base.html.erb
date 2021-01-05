@@ -20,5 +20,11 @@
         <%= project.images.size %> images
       <% end %>
     </div>
+    <div class="col-2" id=<%= "project-status-#{project.id}" %> >
+      <%= render partial: "admin/projects/status", locals:{project: project} %>
+    </div>
+    <div class="col-2 btn-group" id=<%= "project-download-#{project.id}" %>>
+      <%= render partial: "admin/projects/download", locals:{project: project} %>
+    </div>
   </div>
 </div>

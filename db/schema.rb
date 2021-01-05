@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_184815) do
+ActiveRecord::Schema.define(version: 2020_12_24_174035) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_12_10_184815) do
     t.integer "status_stick", default: 0
     t.bigint "user_id", null: false
     t.bigint "project_id"
+    t.text "base_64"
+    t.integer "predict", default: 0
     t.index ["project_id"], name: "index_images_on_project_id"
     t.index ["user_id"], name: "index_images_on_user_id"
   end
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_184815) do
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.integer "status", default: 0
   end
 
   create_table "user_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,0 +1,18 @@
+<% if image.project.status == "unlock_" %>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" >
+    Download
+    <i class="mdi mdi-database-export mdi-9px"></i>
+  </button>
+<% else %>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false" disabled="disabled" >
+    Download
+    <i class="mdi mdi-database-export mdi-9px"></i>
+  </button>
+<% end %>
+<div class="dropdown-menu">
+  <%= link_to "CSV", "http://localhost:3000/en/admin/locations.csv?image_id=#{image.id}", class: "dropdown-item" %>
+  <div class="dropdown-divider"></div>
+  <%= link_to "JSON", "http://localhost:3000/en/admin/locations.json?image_id=#{image.id}", class: "dropdown-item" %>
+</div>

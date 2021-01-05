@@ -1,15 +1,14 @@
 <%= provide :title, "Manage projects" %>
 <%= provide :Title, "Managa all projects" %>
-<%= link_to "New project", new_admin_project_path, class: "btn btn-primary mt-5" %>
 <div class="btn-group mt-5">
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Download all locations data
     <i class="mdi mdi-database-export mdi-9px"></i>
   </button>
   <div class="dropdown-menu">
-    <%= link_to "CSV", "http://localhost:3000/en/admin/locations.csv", class: "dropdown-item" %>
+    <%= link_to "CSV", "http://localhost:3000/en/locations.csv", class: "dropdown-item" %>
     <div class="dropdown-divider"></div>
-    <%= link_to "JSON", "http://localhost:3000/en/admin/locations.json", class: "dropdown-item" %>
+    <%= link_to "JSON", "http://localhost:3000/en/locations.json", class: "dropdown-item" %>
   </div>
 </div>
 <table class="table table-hover mt-5">
@@ -22,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= render partial: "admin/projects/list_projects", collection: @projects, as: :project %>
+    <%= render partial: "projects/list_projects", collection: @projects, as: :project %>
   </tbody>
 </table>
 <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true"></div>

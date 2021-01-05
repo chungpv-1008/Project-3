@@ -1,0 +1,11 @@
+<div class="toast d-flex align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-body">
+    Hello, world! This is a toast message.
+  </div>
+  <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+<div id="edit-location-modal" class="modal fade"></div>
+<div id="container">
+  <%= image_tag @image.background, class: "detail-image", alt: @image.name %>
+  <%= render partial: "admin/locations/location", collection: @locations, as: :location %>
+</div>
