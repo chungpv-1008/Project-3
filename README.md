@@ -4,7 +4,7 @@ Các bước thực hiện:
 
 * Cài mysql, ghi nhớ password
 
-* Cài workbench
+* Cài workbench, ô tạo mới 1 database tên "abc", -> file cdatabase.yml sử tên database thành "abc"
 
 * Trong workbench tạo database trống tên là: project_3
 
