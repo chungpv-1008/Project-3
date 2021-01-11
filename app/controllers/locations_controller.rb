@@ -37,6 +37,14 @@ class LocationsController < ApplicationController
     end
   end
 
+  def new
+    @location = Location.new image_id: params[:image_id], coordinate: params[:coordinate]
+  end
+
+  def create
+    Location.create image_id: params[:location][:image_id], coordinate: params[:location][:coordinate], content: params[:location][:content]
+  end
+
   def edit; end
 
   def update
