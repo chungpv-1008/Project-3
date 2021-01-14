@@ -7,7 +7,7 @@ default: &default
   host: "localhost"
   database: "project_3"
   username: "root"
-  password: "11111999"
+  password: "11111999Pham#"
   port: 3306
 
 development:

@@ -81,8 +81,9 @@ $(document).on('turbolinks:load', function() {
 
 $(document).on('turbolinks:load', function() {
   var index = 0;
+  var width = $(".detail-image")[0].naturalWidth;
+  var height = $(".detail-image")[0].naturalHeight;
   $(".location").each(function() {
-    var content = $(this).find('.content').html();
     var boxes = $(this).find('.coordinate').html().split(',').map(function(e) {
       return parseInt(e);
     });
@@ -93,6 +94,13 @@ $(document).on('turbolinks:load', function() {
     $(`#box-th-${index + 1}`).css("height", boxes[3] - boxes[1]);
     buttonEdit($(`#button-edit-${index + 1}`), boxes);
     index = index + 1;
+    var content = $(this).find('.content').html();
+    $(this).find('.content').parent().css("list-style-type", "none");
+    $(this).find('.content').css("color", "#1212dc");
+    $(this).find('.content').css("border", "1px solid");
+    $(this).find('.content').css("position", "absolute");
+    $(this).find('.content').css("bottom", height - boxes[1]);
+    $(this).find('.content').css("left", (boxes[2] + boxes[0]) / 2);
   });
 });
 
@@ -115,10 +123,13 @@ $(document).on('mouseenter','.box', function() {
   $(this).parent().find(".button-edit-location").css('display', 'inline-block');
   $(this).parent().find(".button-edit-location").css('opacity', '.6');
   $(this).parent().find(".button-edit-location").css('z-index', '1000');
+  $(this).parent().find(".content").css("border", "1px solid red");
+  $(this).parent().find(".content").css("color", "red");
 }).on('mouseleave','.box',  function(){
   var id = $(this).attr('id').split('-')[2];
   $(this).parent().find(".button-edit-location").css('display', 'none');
   $(this).parent().find(".button-edit-location").css('z-index', '1000');
+  $(this).parent().find(".content").css("color", "#1212dc");
 });
 
 $(document).on('mouseenter','.button-edit-location', function() {
