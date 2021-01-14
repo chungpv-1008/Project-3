@@ -1,3 +1,5 @@
-$("#edit-location-modal").html(`
-  <%= j render "admin/locations/edit_modal", location: @location %>
-`).modal("show");
+$('#edit-location').html(`
+  <%= j render 'admin/locations/form_edit', location: @location %>
+`);
+$('#edit-location').css('top', '<%= @top %>px');
+$('#edit-location').css('left', '<%= @left %>px');

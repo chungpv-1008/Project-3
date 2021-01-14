@@ -1,1 +1,4 @@
-$("#edit-location-modal").modal("hide");
+$('#edit-location').html('');
+$('#list-locations').html(`
+    <%= j render partial: "admin/locations/location", collection: Location.all, as: :location %>
+`);

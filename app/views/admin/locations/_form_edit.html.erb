@@ -1,0 +1,9 @@
+<%= form_for [:admin, location], html: {class: "form-inline form-edit-location"}, remote: true do |f| %>
+	<div class="form-group">
+			<%= f.label "Content", for: "content", class: "sr-only" %>
+			<%= f.text_field :content, class: "form-control", id: "content" %>
+	</div>
+	<%= f.button "", class: "btn btn-sm btn-primary" do %>
+		<i class="mdi mdi-check mdi-9px"></i>
+	<% end %>
+<% end %>

@@ -1,3 +1,5 @@
-$("#edit-location-modal").html(`
-  <%= j render "locations/new_modal", location: @location %>
-`).modal("show");
+$('#edit-location').html(`
+  <%= j render 'locations/form_new', location: @location %>
+`);
+$('#edit-location').css('top', '<%= @top %>px');
+$('#edit-location').css('left', '<%= @left %>px');

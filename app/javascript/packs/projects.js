@@ -43,7 +43,6 @@ $(document).on('turbolinks:load', function() {
 });
 
 function hanlde_mouse(allPoints) {
-  console.log(allPoints);
   location_th += 1;
   $("#container").append(`<div class="location"><a class="button-edit-location btn btn-sm btn-primary" id="button-edit-${location_th}" data-remote="true" href="/en/admin/locations/3490/edit"><i class="mdi mdi-brush mdi-9px"></i></a><div class="box" id="box-th-${location_th}"></div></div>`);
   x_min = allPoints[0].x > allPoints[1].x ? allPoints[1].x : allPoints[0].x
@@ -129,6 +128,7 @@ $(document).on('mouseenter','.box', function() {
   var id = $(this).attr('id').split('-')[2];
   $(this).parent().find(".button-edit-location").css('display', 'none');
   $(this).parent().find(".button-edit-location").css('z-index', '1000');
+  $(this).parent().find(".content").css("border", "1px solid #1212dc");
   $(this).parent().find(".content").css("color", "#1212dc");
 });
 
@@ -136,8 +136,12 @@ $(document).on('mouseenter','.button-edit-location', function() {
   $(this).css('display', 'inline-block');
   $(this).css('opacity', '.6');
   $(this).css('z-index', '1000');
+  $(this).parent().find(".content").css("border", "1px solid red");
+  $(this).parent().find(".content").css("color", "red");
 }).on('mouseleave','.button-edit-location',  function(){
   var id = $(this).attr('id').split('-')[2];
   $(this).css('display', 'none');
   $(this).css('z-index', '1000');
+  $(this).parent().find(".content").css("border", "1px solid #1212dc");
+  $(this).parent().find(".content").css("color", "#1212dc");
 });

@@ -39,10 +39,15 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new image_id: params[:image_id], coordinate: params[:coordinate]
+    coordinate = @location.coordinate
+    coordinates = coordinate.split(",").map(&:to_i)
+    @left = coordinates[0] > coordinates[2] ? coordinates[2] : coordinates[0]
+    @top = coordinates[1] > coordinates[3] ? coordinates[1] : coordinates[3]
   end
 
   def create
-    Location.create image_id: params[:location][:image_id], coordinate: params[:location][:coordinate], content: params[:location][:content]
+    @location = Location.create image_id: params[:location][:image_id], coordinate: params[:location][:coordinate], content: params[:location][:content]
+    redirect_back fallback_location: root_path
   end
 
   def edit; end

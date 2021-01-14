@@ -40,11 +40,17 @@ class Admin::LocationsController < Admin::BasesController
     end
   end
 
-  def edit; end
+  def edit
+    coordinate = @location.coordinate
+    coordinates = coordinate.split(",").map(&:to_i)
+    @left = coordinates[0] > coordinates[2] ? coordinates[2] : coordinates[0]
+    @top = coordinates[1] > coordinates[3] ? coordinates[1] : coordinates[3]
+    # binding.pry
+  end
 
   def update
     @location.update location_params
-    redirect_back fallback_location: root_path
+    # redirect_back fallback_location: root_path
   end
 
   private

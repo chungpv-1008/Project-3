@@ -7,6 +7,9 @@
 <div id="edit-location-modal" class="modal fade left"></div>
 <button type="button" id="stick_by_hands" class="btn btn-danger" data-uid="<%= @image.id %>">Stick labels by hands</button>
 <div id="container">
+  <div id="edit-location" class="edit-location-div"></div>
   <%= image_tag @image.background, class: "detail-image", alt: @image.name %>
-  <%= render partial: "admin/locations/location", collection: @locations, as: :location %>
+  <div id="list-locations">
+    <%= render partial: "admin/locations/location", collection: @locations, as: :location %>
+  </div>
 </div>
