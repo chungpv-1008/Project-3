@@ -1,1 +1,2 @@
-$("#edit-location-modal").modal("hide");
+$('#edit-location').html('');
+$('#location-id-<%= @location.id %> .content').html('<%= @location.content %>');

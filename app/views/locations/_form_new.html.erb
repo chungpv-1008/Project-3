@@ -1,0 +1,11 @@
+<%= form_for @location, html: {class: "form-inline form-edit-location"}, remote: true do |f| %>
+	<div class="form-group">
+			<%= f.label "Content", for: "content", class: "sr-only" %>
+            <%= f.text_field :content, class: "form-control", id: "content" %>
+            <%= f.hidden_field :coordinate, value: @location.coordinate %>
+            <%= f.hidden_field :image_id, value: @location.image_id %>
+	</div>
+	<%= f.button "", class: "btn btn-sm btn-primary" do %>
+		<i class="mdi mdi-plus mdi-9px"></i>
+	<% end %>
+<% end %>
